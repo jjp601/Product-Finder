@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+        <article class="card-body">
+        
+        <h4 class="card-title mb-4 mt-1">Create Product</h4>
+            <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input name="name" class="form-control" placeholder="Name" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label>Description</label>
+                    <input name="description" class="form-control" placeholder="Description" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label>Product Link</label>
+                    <input name="url" class="form-control" placeholder="URL" type="url">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label>Icon</label>
+                    <input name="icon" class="form-control" type="file">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label>Image</label>
+                    <input name="image" class="form-control" type="file">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Add Product</button>
+                </div> <!-- form-group// -->                                                           
+            </form>
+        </article>
+        </div> <!-- card.// -->
+    </div>
+</div>
+
+{% endblock %}
